@@ -12,6 +12,13 @@ app.use(express.json());
 
 app.use("/", router);
 
+app.get("/", (req, res)=>{
+  res.json({
+    success: true,
+    message: "Server Running Successfully"
+  })
+})
+
 dbConnect();
   
 app.listen(PORT, () => {
